@@ -1,0 +1,2 @@
+rootProject.name='Pb7'
+include ':app'

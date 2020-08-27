@@ -1,0 +1,2 @@
+rootProject.name='Pb8'
+include ':app'
