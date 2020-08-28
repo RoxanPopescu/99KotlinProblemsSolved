@@ -10,42 +10,31 @@ Example:
 [(4, a), (1, b), (2, c), (2, a), (1, d), (4, e)]
  */
 
-    fun <T> encodeDirect(list: List<T>): MutableList<Pair<Int, T>> {
-//        val result = mutableListOf<Map<Int, T>>()
-//
-//        val pairs: Map<T, Int> = list.groupingBy { it }.eachCount()
-//
-//        for( pair in pairs.entries)
-//            result.add(Map.Entry(pair.key,pair.value))
-//
-//        return result
+fun <T> encodeDirect(list: List<T>): List<Pair<Int, T>> {
+    val n: Int = list.size
+    val result = mutableListOf<Pair<Int, T>>()
 
-        val n: Int = list.size
-        val result = mutableListOf<Pair<Int, T>>()
-
-        var i = 0
-        while (i < n) {
-
-            // Count occurrences of current character 
-            var count = 1
-            while (i < n - 1 &&
-                list.elementAt(i) === list.elementAt(i + 1)
-            ) {
-                count++
-                i++
-            }
-
-            // Print character and its count 
-            result.add(Pair(count,list.elementAt(i)))
-            print("($list, $count), ")
+    var i = 0
+    while (i < n) {
+        // Count occurrences of current character
+        var count = 1
+        while (i < n - 1 &&
+            list.elementAt(i) === list.elementAt(i + 1)
+        ) {
+            count++
             i++
         }
-        return result
+        // Print character and its count
+        result.add(Pair(count, list.elementAt(i)))
+        print("($count,${list[i]}), ")
+        i++
     }
+    return result
+}
 
-   fun main(){
-        println(encodeDirect("aaaabccaadeeee".toList()).toString())
-    }
+fun main() {
+    encodeDirect("aaaabccaadeeee".toList()).toString()
+}
 
 
 
