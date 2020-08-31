@@ -1,5 +1,6 @@
 package com.example.pb4
 
+import org.hamcrest.CoreMatchers.equalTo
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -9,9 +10,11 @@ import org.junit.Assert.*
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleUnitTest {
+
+class P04Test {
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun `reverse a list`() {
+
+        assertThat(nrOfElements(listOf(1, 1, 2, 3, 5, 8)), equalTo(6))
     }
 }
