@@ -1,5 +1,6 @@
 package com.example.pb3
 
+import org.hamcrest.CoreMatchers.equalTo
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -9,9 +10,11 @@ import org.junit.Assert.*
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleUnitTest {
+
+class P03Test {
+
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
-    }
+    fun `find the Nth element of a list`() =
+        assertThat(nthElement(listOf(1, 1, 2, 3, 5, 8), 4), equalTo(3))
 }
+
