@@ -1,6 +1,5 @@
 package com.example.myapplication.pb23
 
-import android.os.Build
 import kotlin.random.Random
 
 /**
