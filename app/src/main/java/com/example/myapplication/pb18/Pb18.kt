@@ -11,7 +11,7 @@ Start counting the elements with 0. Example:
  */
 
 fun <T> sliceList(I: Int, K: Int, list: List<T>): List<T> {
-    return if (list.isEmpty() || ((I > list.size) || (K > list.size)) || ((I < 0) || (K < 0))) {
+    return if (list.isEmpty() || I > list.size || K > list.size || I < 0 || K < 0) {
         emptyList()
     } else {
         list.take(K).drop(I)
@@ -34,8 +34,5 @@ fun main() {
     } else {
         println(result)
     }
-
-    println("Or using sublist() from list we have list.sublist($I,$K) = "+ slice_(I,K,list))
-
-
+    println("Or using sublist() from list we have list.sublist($I,$K) = " + slice_(I, K, list))
 }

@@ -21,12 +21,10 @@ fun randomPermute(list: List<Char>, random: Random): List<Char> {
 fun randomPermutate(list: List<Char>, random: Random): List<Char> {
 
     var collection = arrayListOf<Char>()
-
     list.forEach {
         collection.add(it)
     }
     collection.shuffle(random)
-
     return collection.toList()
 }
 
@@ -65,5 +63,4 @@ fun main() {
     println("1. Random permutation of a list with random nr is $result2)")
     println("2. Random permutation of a list with random nr is $result)")
     println("3. Random permutation of a list with random nr is $result3)")
-
 }

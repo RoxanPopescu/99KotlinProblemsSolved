@@ -5,7 +5,6 @@ import com.example.myapplication.pb18.slice_
 /**
  * P20 (*) Remove the Kth element from a list.
 Return the list and the removed element in a Tuple. Elements are numbered from 0. Example:
-
 > removeAt(1, "abcd".toList())
 ([a, c, d], b)
  */
@@ -24,13 +23,12 @@ fun main() {
     val k = 2
 
     println(" removeAt the $k -th element from the list :$list")
-    val result = removeAt(k-1, list)
+    val result = removeAt(k - 1, list)
 
     if (result.first.isEmpty()) {
         println(" Result is an empty list, because k= $k which is less than list size ${list.size}")
     } else {
         println(" result is (${result.first}, ${result.second} )")
     }
-
 }
 

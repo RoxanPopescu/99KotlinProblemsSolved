@@ -9,13 +9,7 @@ Use a Pair for your result. Example:
 ([a, b, c], [d, e, f, g, h, i, j, k])
  */
 
-fun <T> splitList(n: Int, list: List<T>): Pair<List<T>,List<T>>{
-    return if(list.isEmpty()){
-        Pair(emptyList(), emptyList())
-    }else{
-        Pair(list.take(n),list.drop(n))
-    }
-}
+fun <T> splitList(n: Int, list: List<T>): Pair<List<T>,List<T>> = Pair(list.take(n),list.drop(n))
 
 fun main(){
     val n = 3

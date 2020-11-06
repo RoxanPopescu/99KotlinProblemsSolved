@@ -10,42 +10,21 @@ Make sure there is a way to produce deterministic results. Example:
 [c, h, f]
  */
 
-
-//fun extractRandom(givenNr: Int, list: List<Char>): List<Char> {
-//
-//    var count = 0
-//    var randomList = emptyList<Char>().toMutableList()
-//
-//    while (count < givenNr) {
-//        val randomInteger = (0 until list.size).random()
-//        if(randomInteger<list.size) {
-//            println("position $randomInteger, element " + list[randomInteger])
-//            randomList.add(count++, list[randomInteger])
-//        }
-//    }
-//
-//    return randomList
-//}
-
-fun extractRandom(givenNr: Int, list: List<Char>,random:  Random): List<Char> =
+fun extractRandom(givenNr: Int, list: List<Char>, random: Random): List<Char> =
 
     if (givenNr == 0) emptyList()
     else {
-
         val value = list[random.nextInt(list.size)]
         extractRandom(givenNr - 1, list.filter { it != value }, random) + value
     }
-
 
 fun main() {
 
     val list = "abcdefgh".toList()
     val givenNr = 3
-
     println(list)
     println(" Extract a given number of $givenNr randomly selected elements from the above list ")
     val result = extractRandom(givenNr, list, Random(123))
 
     println(" List is $result)")
-
 }
